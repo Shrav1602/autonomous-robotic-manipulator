@@ -29,3 +29,18 @@ if __name__ == "__main__":
     for length, angle in test_configurations:
         endpoint = calculate_endpoint(length, angle)
         print(f"Length: {length}, Angle: {angle}° -> Endpoint: {endpoint}")
+
+
+if __name__ == "__main__":
+    test_configurations = [
+        (10, 5, 0, 0),
+        (10, 5, 90, 0),
+        (10, 5, 30, 0),
+        (10, 5, 45, 30),
+        (10, 5, 90, -45)
+
+    ]
+
+    for link1_length, link2_length, angle1, angle2 in test_configurations:
+        joint1, final_endpoint = calculate_two_link_endpoint(link1_length, link2_length, angle1, angle2)
+        print(f"Link1: {link1_length}, Link2: {link2_length}, Angle1: {angle1}°, Angle2: {angle2}° -> Joint1: {joint1}, Final Endpoint: {final_endpoint}")
